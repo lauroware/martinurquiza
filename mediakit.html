@@ -1,625 +1,793 @@
-<!doctype html>
-<html lang="es">
+<!DOCTYPE html>
+<html lang="es-AR">
 <head>
-  <meta charset="utf-8" />
-  <meta name="viewport" content="width=device-width, initial-scale=1" />
-  <title>Martín Urquiza — Media Kit 2026</title>
-  <link rel="preconnect" href="https://fonts.googleapis.com">
-  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-  <link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,400;0,600;0,700;1,400&family=Jost:wght@300;400;500;600;700;800;900&display=swap" rel="stylesheet">
-  <style>
-    *, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Media Kit — Martín Urquiza</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Bricolage+Grotesque:opsz,wght@12..96,300;12..96,500;12..96,800&family=IBM+Plex+Mono:wght@400;500;600&family=IBM+Plex+Sans:wght@300;400;500;600&display=swap" rel="stylesheet">
+<style>
+:root{
+  --tinta:#16181C;
+  --papel:#EDEEE8;
+  --papel-alt:#E3E5DD;
+  --campari:#A8271B;
+  --petroleo:#1F5F7A;
+  --gris:#767A72;
+  --linea:#C7C9C0;
+}
 
-    :root {
-      --bg:     #080808;
-      --card:   #111111;
-      --card2:  #0d0d0d;
-      --text:   #f0ece4;
-      --muted:  rgba(240,236,228,0.65);
-      --line:   rgba(255,255,255,0.09);
-      --amber:  #c9812a;
-      --amber-lt: #e8a84a;
-      --amber-glow: rgba(201,129,42,0.14);
-      --max:    1100px;
-      --r:      18px;
-    }
+*{box-sizing:border-box;margin:0;padding:0}
 
-    html, body { height: 100%; }
+html{-webkit-text-size-adjust:100%}
 
-    body {
-      font-family: 'Jost', sans-serif;
-      background: var(--bg);
-      color: var(--text);
-      line-height: 1.5;
-    }
+body{
+  background:var(--papel-alt);
+  color:var(--tinta);
+  font-family:'IBM Plex Sans',system-ui,sans-serif;
+  font-weight:300;
+  line-height:1.5;
+  padding:24px 12px;
+}
 
-    a { color: inherit; text-decoration: none; }
+.page{
+  background:var(--papel);
+  width:210mm;
+  min-height:297mm;
+  margin:0 auto 24px;
+  padding:18mm 16mm;
+  position:relative;
+  display:flex;
+  flex-direction:column;
+}
 
-    /* ─── HERO ─────────────────────────────────── */
-    .hero {
-      position: relative;
-      background: #000;
-      overflow: hidden;
-      background-image: url("https://tuchicococina.netlify.app/assets/img/home-bg.jpg");
-      background-size: cover;
-      background-position: center;
-      background-repeat: no-repeat;
-    }
-    .hero::before {
-      content: '';
-      position: absolute;
-      inset: 0;
-      background: rgba(0,0,0,0.58);
-      z-index: 0;
-    }
-    /* Amber vertical accent bar */
-    .hero__bar {
-      position: absolute;
-      right: 0; top: 0; bottom: 0;
-      width: clamp(20px, 4vw, 56px);
-      background: linear-gradient(180deg, var(--amber) 0%, var(--amber-lt) 100%);
-      z-index: 1;
-    }
-    .hero__inner {
-      position: relative;
-      z-index: 2;
-      max-width: var(--max);
-      margin: 0 auto;
-      padding: clamp(28px, 5vw, 56px) clamp(16px, 3vw, 28px);
-      padding-right: calc(clamp(16px, 3vw, 28px) + clamp(20px, 4vw, 56px) + 8px);
-      display: grid;
-      grid-template-columns: auto 1fr;
-      gap: clamp(24px, 4vw, 56px);
-      align-items: center;
-    }
+/* ---------- tipografía base ---------- */
+.display{
+  font-family:'Bricolage Grotesque',sans-serif;
+  font-weight:800;
+  line-height:0.94;
+  letter-spacing:-0.03em;
+}
 
-    /* Avatar in hero */
-    .hero__avatar-wrap {
-      position: relative;
-      width: clamp(90px, 14vw, 150px);
-      height: clamp(90px, 14vw, 150px);
-      flex-shrink: 0;
-    }
-    .hero__avatar-ring {
-      position: absolute;
-      inset: -3px;
-      border-radius: 50%;
-      background: conic-gradient(var(--amber), var(--amber-lt), #f0c060, var(--amber-lt), var(--amber));
-    }
-    .hero__avatar-ring::after {
-      content: '';
-      position: absolute;
-      inset: 3px;
-      border-radius: 50%;
-      background: #000;
-    }
-    .hero__avatar {
-      position: absolute;
-      inset: 3px;
-      width: calc(100% - 6px);
-      height: calc(100% - 6px);
-      border-radius: 50%;
-      object-fit: cover;
-      z-index: 1;
-    }
+.mono{
+  font-family:'IBM Plex Mono',monospace;
+  font-variant-numeric:tabular-nums;
+}
 
-    .hero__copy {}
+.eyebrow{
+  font-family:'IBM Plex Mono',monospace;
+  font-size:8.5pt;
+  font-weight:500;
+  letter-spacing:0.16em;
+  text-transform:uppercase;
+  color:var(--campari);
+}
 
-    .brand__name {
-      font-weight: 800;
-      letter-spacing: 0.18em;
-      font-size: clamp(0.72rem, 1.5vw, 0.92rem);
-      opacity: 0.9;
-      text-transform: uppercase;
-    }
-    .brand__role {
-      margin-top: 4px;
-      font-size: clamp(0.75rem, 1.2vw, 0.9rem);
-      letter-spacing: 0.06em;
-      color: var(--muted);
-      text-transform: uppercase;
-    }
+.eyebrow-gris{color:var(--gris)}
 
-    .hero__title {
-      margin: 16px 0 10px;
-      font-family: 'Cormorant Garamond', serif;
-      font-weight: 700;
-      font-size: clamp(2.4rem, 5.5vw, 4.8rem);
-      line-height: 1.0;
-      letter-spacing: 0.01em;
-      text-transform: uppercase;
-    }
-    .hero__title .accent {
-      color: var(--amber-lt);
-    }
+h2.seccion{
+  font-family:'Bricolage Grotesque',sans-serif;
+  font-weight:800;
+  font-size:26pt;
+  line-height:1;
+  letter-spacing:-0.025em;
+  margin:6px 0 18px;
+}
 
-    /* Followers pill */
-    .hero__pill {
-      display: inline-flex;
-      align-items: center;
-      gap: 8px;
-      background: rgba(201,129,42,0.18);
-      border: 1px solid rgba(201,129,42,0.30);
-      border-radius: 24px;
-      padding: 6px 14px;
-      font-size: 0.78rem;
-      font-weight: 700;
-      letter-spacing: 0.08em;
-      color: var(--amber-lt);
-      text-transform: uppercase;
-      margin-bottom: 16px;
-    }
-    .hero__pill::before {
-      content: '';
-      width: 7px; height: 7px;
-      border-radius: 50%;
-      background: var(--amber-lt);
-      animation: pulse 2s ease-in-out infinite;
-    }
-    @keyframes pulse {
-      0%, 100% { opacity: 1; }
-      50%       { opacity: 0.3; }
-    }
+p{font-size:10.5pt;max-width:62ch}
+p + p{margin-top:9px}
 
-    .hero__contacts {
-      margin-top: 16px;
-      display: grid;
-      gap: 7px;
-      font-size: 0.85rem;
-    }
-    .hero__link {
-      opacity: 0.75;
-      border-bottom: 1px dashed rgba(255,255,255,0.28);
-      width: fit-content;
-      padding-bottom: 2px;
-      letter-spacing: 0.04em;
-      transition: opacity 0.2s, border-color 0.2s;
-    }
-    .hero__link:hover {
-      opacity: 1;
-      border-bottom-color: rgba(255,255,255,0.7);
-    }
+strong{font-weight:600}
 
-    /* ─── YEAR CHIP ─────────────────────────────── */
-    .chip {
-      position: absolute;
-      top: clamp(20px, 3vw, 32px);
-      right: calc(clamp(20px, 4vw, 56px) + 16px);
-      z-index: 2;
-      border: 1px solid rgba(255,255,255,0.20);
-      padding: 10px 14px;
-      border-radius: 14px;
-      font-weight: 700;
-      letter-spacing: 0.08em;
-      text-align: center;
-      font-size: 0.82rem;
-      line-height: 1.3;
-    }
-    .chip span { font-size: 1.1em; display: block; }
+/* ---------- encabezado corrido ---------- */
+.corrido{
+  display:flex;
+  justify-content:space-between;
+  align-items:baseline;
+  border-bottom:1.5px solid var(--tinta);
+  padding-bottom:6px;
+  margin-bottom:26px;
+  font-family:'IBM Plex Mono',monospace;
+  font-size:8pt;
+  letter-spacing:0.1em;
+  text-transform:uppercase;
+}
 
-    /* ─── MAIN ──────────────────────────────────── */
-    .wrap {
-      max-width: var(--max);
-      margin: 0 auto;
-      padding: clamp(20px, 3vw, 32px) clamp(16px, 3vw, 28px) 56px;
-      display: grid;
-      gap: 20px;
-    }
+.folio{color:var(--gris)}
 
-    .section {
-      background: var(--card);
-      border: 1px solid var(--line);
-      border-radius: var(--r);
-      overflow: hidden;
-    }
-    .section__head {
-      padding: 16px 20px 14px;
-      border-bottom: 1px solid var(--line);
-      background: #0e0e0e;
-    }
-    .section__head h2 {
-      font-weight: 900;
-      letter-spacing: 0.10em;
-      font-size: 0.82rem;
-      text-transform: uppercase;
-      color: var(--amber-lt);
-    }
-    .section__body {
-      padding: 20px;
-    }
+/* ---------- PORTADA ---------- */
+.portada{justify-content:space-between}
 
-    /* ─── ABOUT GRID ─────────────────────────────── */
-    .about-grid {
-      display: grid;
-      grid-template-columns: 1.65fr 1fr;
-      gap: 20px;
-    }
-    @media (max-width: 820px) {
-      .hero__inner { grid-template-columns: 1fr; }
-      .hero__avatar-wrap { margin: 0 auto; }
-      .hero__copy { text-align: center; }
-      .hero__pill, .hero__link { margin-left: auto; margin-right: auto; }
-      .about-grid { grid-template-columns: 1fr; }
-      .chip { display: none; }
-    }
+.portada-top{
+  display:flex;
+  justify-content:space-between;
+  align-items:flex-start;
+  border-bottom:1.5px solid var(--tinta);
+  padding-bottom:8px;
+}
 
-    .about p {
-      margin-bottom: 12px;
-      color: rgba(255,255,255,0.88);
-      font-size: 0.95rem;
-      line-height: 1.65;
-    }
-    .about p:last-of-type { margin-bottom: 0; }
+.nombre{
+  font-family:'Bricolage Grotesque',sans-serif;
+  font-weight:800;
+  font-size:15pt;
+  letter-spacing:-0.02em;
+}
 
-    .handle-tag {
-      display: inline-flex;
-      align-items: center;
-      gap: 6px;
-      margin: 16px 0 14px;
-      font-weight: 800;
-      letter-spacing: 0.08em;
-      font-size: 0.9rem;
-      color: var(--amber-lt);
-      text-transform: uppercase;
-    }
+.handle{
+  font-family:'IBM Plex Mono',monospace;
+  font-size:9.5pt;
+  color:var(--campari);
+  font-weight:500;
+}
 
-    .formats {
-      background: #0b0b0b;
-      border: 1px solid var(--line);
-      border-radius: 14px;
-      padding: 16px 18px;
-      margin-top: 4px;
-    }
-    .formats h3 {
-      font-size: 0.78rem;
-      font-weight: 800;
-      letter-spacing: 0.10em;
-      text-transform: uppercase;
-      color: var(--muted);
-      margin-bottom: 12px;
-    }
-    .formats ul {
-      list-style: none;
-      display: grid;
-      gap: 8px;
-    }
-    .formats li {
-      font-size: 0.88rem;
-      color: rgba(255,255,255,0.82);
-      display: flex;
-      align-items: center;
-      gap: 8px;
-    }
-    .formats li::before {
-      content: '';
-      width: 4px; height: 4px;
-      border-radius: 50%;
-      background: var(--amber);
-      flex-shrink: 0;
-    }
+.tesis{
+  font-size:41pt;
+  margin:40px 0 0;
+  max-width:16ch;
+}
 
-    /* ─── METRICS SIDEBAR ────────────────────────── */
-    .metrics {
-      background: linear-gradient(160deg, var(--amber) 0%, #a0600d 100%);
-      border-radius: 14px;
-      padding: 18px;
-      color: #fff;
-    }
-    .metrics__header {
-      background: rgba(0,0,0,0.18);
-      border: 1px solid rgba(255,255,255,0.20);
-      border-radius: 12px;
-      padding: 14px;
-      margin-bottom: 16px;
-    }
-    .metrics__kicker {
-      font-size: 0.72rem;
-      font-weight: 800;
-      letter-spacing: 0.12em;
-      text-transform: uppercase;
-      opacity: 0.9;
-    }
-    .metrics__big {
-      font-family: 'Cormorant Garamond', serif;
-      font-size: 1.6rem;
-      font-weight: 700;
-      line-height: 1.1;
-      margin-top: 4px;
-    }
+.tesis em{
+  font-style:normal;
+  color:var(--campari);
+}
 
-    .metrics__section-title {
-      font-size: 0.72rem;
-      font-weight: 800;
-      letter-spacing: 0.10em;
-      text-transform: uppercase;
-      margin-bottom: 12px;
-      opacity: 0.9;
-    }
+.bajada{
+  font-size:12pt;
+  font-weight:300;
+  max-width:46ch;
+  margin-top:22px;
+  color:var(--tinta);
+  line-height:1.45;
+}
 
-    .metrics__box {
-      background: rgba(0,0,0,0.16);
-      border: 1px solid rgba(255,255,255,0.22);
-      border-radius: 12px;
-      padding: 14px;
-    }
+/* franja de datos duros de portada */
+.franja{
+  display:grid;
+  grid-template-columns:repeat(3,1fr);
+  border-top:1.5px solid var(--tinta);
+  margin-top:auto;
+}
 
-    .stat-grid {
-      display: grid;
-      gap: 12px;
-    }
-    .stat-row {
-      padding-bottom: 12px;
-      border-bottom: 1px solid rgba(255,255,255,0.16);
-    }
-    .stat-row:last-child {
-      padding-bottom: 0;
-      border-bottom: none;
-    }
-    dt {
-      font-size: 0.72rem;
-      font-weight: 800;
-      letter-spacing: 0.08em;
-      text-transform: uppercase;
-      opacity: 0.85;
-    }
-    dd {
-      margin: 3px 0 0;
-      font-size: 0.95rem;
-      font-weight: 500;
-    }
-    dd strong {
-      font-size: 1.15rem;
-      font-weight: 900;
-    }
+.franja > div{
+  padding:14px 14px 0 0;
+  border-right:1px solid var(--linea);
+}
+.franja > div:last-child{border-right:none;padding-right:0}
 
-    /* ─── STATS ROW ──────────────────────────────── */
-    .stats-row {
-      display: grid;
-      grid-template-columns: repeat(auto-fit, minmax(180px, 1fr));
-      gap: 14px;
-    }
-    .stat-card {
-      background: #0c0c0c;
-      border: 1px solid var(--line);
-      border-radius: 14px;
-      padding: 18px 16px;
-      text-align: center;
-    }
-    .stat-card__num {
-      font-family: 'Cormorant Garamond', serif;
-      font-size: 2.4rem;
-      font-weight: 700;
-      color: var(--amber-lt);
-      line-height: 1;
-    }
-    .stat-card__label {
-      font-size: 0.72rem;
-      font-weight: 600;
-      letter-spacing: 0.10em;
-      text-transform: uppercase;
-      color: var(--muted);
-      margin-top: 6px;
-    }
+.franja .cifra{
+  font-family:'Bricolage Grotesque',sans-serif;
+  font-weight:800;
+  font-size:25pt;
+  letter-spacing:-0.03em;
+  line-height:1;
+  font-variant-numeric:tabular-nums;
+}
 
-    /* ─── CTA ────────────────────────────────────── */
-    .cta {
-      background: linear-gradient(135deg, #111, #181818);
-      border: 1px solid var(--line);
-      border-radius: var(--r);
-      padding: 28px 24px;
-      display: flex;
-      align-items: center;
-      justify-content: space-between;
-      gap: 20px;
-      flex-wrap: wrap;
-    }
-    .cta p {
-      color: rgba(255,255,255,0.82);
-      font-size: 0.95rem;
-      max-width: 560px;
-      line-height: 1.65;
-    }
-    .cta__btn {
-      display: inline-flex;
-      align-items: center;
-      gap: 8px;
-      background: linear-gradient(135deg, var(--amber), var(--amber-lt));
-      color: #1a0d00;
-      font-weight: 700;
-      font-size: 0.8rem;
-      letter-spacing: 0.10em;
-      text-transform: uppercase;
-      padding: 13px 22px;
-      border-radius: 12px;
-      white-space: nowrap;
-      transition: transform 0.2s, box-shadow 0.2s;
-    }
-    .cta__btn:hover {
-      transform: scale(1.04);
-      box-shadow: 0 6px 20px rgba(201,129,42,0.4);
-    }
+.franja .rotulo{
+  font-family:'IBM Plex Mono',monospace;
+  font-size:7.5pt;
+  letter-spacing:0.09em;
+  text-transform:uppercase;
+  color:var(--gris);
+  margin-top:7px;
+  line-height:1.35;
+}
 
-    /* ─── FOOTER ─────────────────────────────────── */
-    .footer {
-      border-top: 1px solid var(--line);
-      padding: 28px 0;
-    }
-    .footer__inner {
-      max-width: var(--max);
-      margin: 0 auto;
-      padding: 0 clamp(16px, 3vw, 28px);
-      display: flex;
-      justify-content: space-between;
-      align-items: center;
-      flex-wrap: wrap;
-      gap: 10px;
-      font-size: 0.75rem;
-      color: rgba(255,255,255,0.30);
-      letter-spacing: 0.06em;
-      text-transform: uppercase;
-    }
-  </style>
+.pie-portada{
+  margin-top:16px;
+  font-family:'IBM Plex Mono',monospace;
+  font-size:7.5pt;
+  color:var(--gris);
+  letter-spacing:0.05em;
+}
+
+/* ---------- filas de determinación (firma del documento) ---------- */
+.determinacion{
+  display:grid;
+  grid-template-columns:1fr auto;
+  gap:0 18px;
+  align-items:baseline;
+  padding:11px 0;
+  border-bottom:1px solid var(--linea);
+}
+
+.determinacion:first-of-type{border-top:1px solid var(--linea)}
+
+.det-param{
+  font-size:10.5pt;
+  font-weight:400;
+}
+
+.det-nota{
+  display:block;
+  font-size:8.5pt;
+  color:var(--gris);
+  font-weight:300;
+  margin-top:2px;
+}
+
+.det-valor{
+  font-family:'IBM Plex Mono',monospace;
+  font-size:15pt;
+  font-weight:600;
+  font-variant-numeric:tabular-nums;
+  letter-spacing:-0.01em;
+  white-space:nowrap;
+}
+
+.det-valor.destacado{color:var(--campari)}
+
+/* ---------- barras de edad ---------- */
+.barra-fila{
+  display:grid;
+  grid-template-columns:64px 1fr 52px;
+  align-items:center;
+  gap:12px;
+  padding:5px 0;
+}
+
+.barra-rot{
+  font-family:'IBM Plex Mono',monospace;
+  font-size:9pt;
+  color:var(--gris);
+}
+
+.barra-riel{
+  height:13px;
+  background:var(--papel-alt);
+  position:relative;
+}
+
+.barra-relleno{
+  height:100%;
+  background:var(--petroleo);
+}
+
+.barra-fila.pico .barra-relleno{background:var(--campari)}
+
+.barra-val{
+  font-family:'IBM Plex Mono',monospace;
+  font-size:9.5pt;
+  font-weight:500;
+  text-align:right;
+  font-variant-numeric:tabular-nums;
+}
+
+/* ---------- bloque sello / apto ---------- */
+.sello{
+  border:1.5px solid var(--campari);
+  padding:16px 18px;
+  margin:22px 0 0;
+  display:grid;
+  grid-template-columns:auto 1fr;
+  gap:18px;
+  align-items:center;
+}
+
+.sello-cifra{
+  font-family:'Bricolage Grotesque',sans-serif;
+  font-weight:800;
+  font-size:34pt;
+  line-height:0.9;
+  color:var(--campari);
+  letter-spacing:-0.03em;
+  font-variant-numeric:tabular-nums;
+}
+
+.sello-texto{font-size:10pt;line-height:1.45}
+.sello-texto strong{display:block;font-weight:600;margin-bottom:3px}
+
+/* ---------- grilla de dos columnas ---------- */
+.dos-col{
+  display:grid;
+  grid-template-columns:1fr 1fr;
+  gap:30px;
+  margin-top:8px;
+}
+
+.sub{
+  font-family:'IBM Plex Mono',monospace;
+  font-size:8.5pt;
+  letter-spacing:0.12em;
+  text-transform:uppercase;
+  color:var(--campari);
+  padding-bottom:6px;
+  border-bottom:1.5px solid var(--tinta);
+  margin-bottom:12px;
+}
+
+.lista-simple{list-style:none}
+.lista-simple li{
+  display:flex;
+  justify-content:space-between;
+  gap:12px;
+  font-size:10pt;
+  padding:6px 0;
+  border-bottom:1px solid var(--linea);
+}
+.lista-simple li span:last-child{
+  font-family:'IBM Plex Mono',monospace;
+  font-weight:500;
+  font-variant-numeric:tabular-nums;
+}
+
+/* ---------- casos ---------- */
+.caso{
+  padding:15px 0;
+  border-bottom:1px solid var(--linea);
+  display:grid;
+  grid-template-columns:1fr 220px;
+  gap:24px;
+  align-items:start;
+}
+.caso:first-of-type{border-top:1.5px solid var(--tinta)}
+
+.caso-titulo{
+  font-family:'Bricolage Grotesque',sans-serif;
+  font-weight:500;
+  font-size:14pt;
+  letter-spacing:-0.015em;
+  margin-bottom:4px;
+}
+
+.caso-desc{font-size:9.5pt;color:var(--gris);line-height:1.45;max-width:none}
+
+.caso-datos{
+  display:grid;
+  grid-template-columns:repeat(3,1fr);
+  gap:10px;
+  text-align:right;
+}
+
+.caso-dato .n{
+  font-family:'IBM Plex Mono',monospace;
+  font-size:12.5pt;
+  font-weight:600;
+  display:block;
+  font-variant-numeric:tabular-nums;
+}
+
+.caso-dato .l{
+  font-family:'IBM Plex Mono',monospace;
+  font-size:7pt;
+  letter-spacing:0.06em;
+  text-transform:uppercase;
+  color:var(--gris);
+}
+
+/* ---------- servicios ---------- */
+.servicio{
+  padding:14px 0;
+  border-bottom:1px solid var(--linea);
+}
+.servicio:first-of-type{border-top:1.5px solid var(--tinta)}
+
+.servicio-cab{
+  display:flex;
+  justify-content:space-between;
+  align-items:baseline;
+  gap:16px;
+  margin-bottom:5px;
+}
+
+.servicio-nombre{
+  font-family:'Bricolage Grotesque',sans-serif;
+  font-weight:500;
+  font-size:13pt;
+  letter-spacing:-0.015em;
+}
+
+.servicio-tag{
+  font-family:'IBM Plex Mono',monospace;
+  font-size:7.5pt;
+  letter-spacing:0.09em;
+  text-transform:uppercase;
+  color:var(--campari);
+  border:1px solid var(--campari);
+  padding:2px 7px;
+  white-space:nowrap;
+}
+
+.servicio p{font-size:9.5pt;color:var(--gris);max-width:none}
+
+/* ---------- contacto ---------- */
+.contacto-bloque{
+  margin-top:auto;
+  border-top:1.5px solid var(--tinta);
+  padding-top:20px;
+  display:grid;
+  grid-template-columns:1fr 1fr;
+  gap:30px;
+}
+
+.contacto-dato{
+  font-family:'IBM Plex Mono',monospace;
+  font-size:11pt;
+  font-weight:500;
+  margin-top:3px;
+}
+
+.completar{
+  background:#F6E9A0;
+  padding:1px 5px;
+  font-weight:400;
+}
+
+.nota-legal{
+  font-size:8.5pt;
+  color:var(--gris);
+  margin-top:20px;
+  max-width:none;
+  line-height:1.5;
+}
+
+/* ---------- impresión ---------- */
+@media print{
+  @page{size:A4;margin:0}
+  body{background:#fff;padding:0}
+  .page{
+    margin:0;
+    box-shadow:none;
+    page-break-after:always;
+    width:210mm;
+    height:297mm;
+  }
+  .page:last-child{page-break-after:auto}
+  .completar{background:none;border-bottom:1px solid var(--gris)}
+}
+
+@media screen{
+  .page{box-shadow:0 2px 18px rgba(0,0,0,.10)}
+}
+
+/* ---------- responsive de pantalla ---------- */
+@media screen and (max-width:820px){
+  .page{width:100%;padding:24px 20px;min-height:0}
+  .tesis{font-size:30pt}
+  .franja{grid-template-columns:1fr;gap:0}
+  .franja > div{border-right:none;border-bottom:1px solid var(--linea);padding:12px 0}
+  .dos-col,.contacto-bloque{grid-template-columns:1fr;gap:24px}
+  .caso{grid-template-columns:1fr;gap:12px}
+  .caso-datos{text-align:left}
+}
+</style>
 </head>
 <body>
 
-  <!-- HERO -->
-  <header class="hero">
-    <div class="hero__inner">
-      <!-- Avatar -->
-      <div class="hero__avatar-wrap">
-        <div class="hero__avatar-ring"></div>
-        <img src="https://i.ibb.co/h1xsYxPX/photo-2026-04-05-13-02-01.jpg=" alt="Martín Urquiza" class="hero__avatar">
+<!-- ============ 01 PORTADA ============ -->
+<section class="page portada">
+  <div>
+    <div class="portada-top">
+      <div>
+        <div class="nombre">MARTÍN URQUIZA</div>
+        <div class="eyebrow eyebrow-gris" style="margin-top:4px">Coctelería · Bebidas · Entretenimiento</div>
       </div>
-
-      <!-- Copy -->
-      <div class="hero__copy">
-        <div class="brand__name">Martín Urquiza</div>
-        <div class="brand__role">Instagramer · Tragos · Cocina · Entretenimiento</div>
-
-        <h1 class="hero__title">
-          Martin<br>
-          <span class="accent">Urquiza</span><br>
-          Media Kit
-        </h1>
-
-        <div class="hero__pill">+97.000 seguidores · Instagram</div>
-
-        <div class="hero__contacts">
-          <a class="hero__link" href="https://martinurquiza.latinmerch.com.ar" target="_blank" rel="noreferrer">
-            martinurquiza.latinmerch.com.ar
-          </a>
-          <a class="hero__link" href="mailto:martinurquiza07@gmail.com">
-            martinurquiza07@gmail.com
-          </a>
-          <a class="hero__link" href="https://instagram.com/martinurquizaok" target="_blank" rel="noreferrer">
-            @martinurquizaok
-          </a>
-        </div>
-      </div>
+      <div class="handle">@martinurquizaok</div>
     </div>
 
-    <div class="chip">MEDIA<br><span>KIT</span><br>2026</div>
-    <div class="hero__bar" aria-hidden="true"></div>
-  </header>
+    <h1 class="display tesis">Alcance con <em>audiencia que compra</em>.</h1>
 
-  <!-- STATS BAR -->
-  <div class="wrap" style="padding-bottom: 0;">
-    <div class="stats-row">
-      <div class="stat-card">
-        <div class="stat-card__num">97K+</div>
-        <div class="stat-card__label">Seguidores</div>
+    <p class="bajada">Contenido de coctelería para marcas de bebidas, con una comunidad en Argentina de más de 125.000 personas y una composición etaria que casi ningún creador del rubro puede ofrecer.</p>
+  </div>
+
+  <div>
+    <div class="franja">
+      <div>
+        <div class="cifra">1,12 M</div>
+        <div class="rotulo">Personas alcanzadas<br>últimos 90 días</div>
       </div>
-      <div class="stat-card">
-        <div class="stat-card__num">+46%</div>
-        <div class="stat-card__label">Crecimiento 30 días</div>
+      <div>
+        <div class="cifra">99,9 %</div>
+        <div class="rotulo">Audiencia<br>mayor de 18 años</div>
       </div>
-      <div class="stat-card">
-        <div class="stat-card__num">&lt;1.5%</div>
-        <div class="stat-card__label">Tasa de abandono</div>
+      <div>
+        <div class="cifra">10,4 %</div>
+        <div class="rotulo">Interacciones sobre<br>reproducciones</div>
       </div>
-      <div class="stat-card">
-        <div class="stat-card__num">25–44</div>
-        <div class="stat-card__label">Rango etario principal</div>
-      </div>
+    </div>
+    <div class="pie-portada">Datos de Instagram Insights · Período 12 may – 09 ago 2026 · Media kit v. ago 2026</div>
+  </div>
+</section>
+
+
+<!-- ============ 02 PERFIL ============ -->
+<section class="page">
+  <div class="corrido">
+    <span>@martinurquizaok · Media kit</span>
+    <span class="folio">02 — Perfil</span>
+  </div>
+
+  <div class="eyebrow">Quién está del otro lado de la cámara</div>
+  <h2 class="seccion">Un técnico químico<br>detrás de la barra.</h2>
+
+  <p>Trabajo hace más de una década como técnico químico y analista en laboratorio. Eso cambia la forma en que hago contenido de coctelería: no muestro un trago, explico por qué funciona. Por qué el hielo sale turbio, por qué una preparación se corta, por qué un cítrico pierde aroma a los veinte minutos, qué le pasa a un destilado cuando lo congelás.</p>
+
+  <p>Para una marca eso significa una cosa concreta: puedo hablar de tu producto con autoridad técnica y que la audiencia lo crea. No es una recomendación más. Es una explicación, y las explicaciones se guardan y se comparten.</p>
+
+  <div class="dos-col" style="margin-top:30px">
+    <div>
+      <div class="sub">Categorías con las que trabajo</div>
+      <ul class="lista-simple">
+        <li><span>Destilados y licores</span></li>
+        <li><span>Aperitivos y vermuts</span></li>
+        <li><span>Bebidas sin alcohol y mixers</span></li>
+        <li><span>Bartools y cristalería</span></li>
+        <li><span>Electrodomésticos de bar y cocina</span></li>
+        <li><span>Gastronomía y consumo masivo</span></li>
+      </ul>
+    </div>
+    <div>
+      <div class="sub">Formatos de contenido</div>
+      <ul class="lista-simple">
+        <li><span>Recetas y preparaciones</span></li>
+        <li><span>Licores y macerados caseros</span></li>
+        <li><span>Explicativos técnicos</span></li>
+        <li><span>Guías de compra y comparativas</span></li>
+        <li><span>Contenido de ocasión (asado, fiestas, verano)</span></li>
+        <li><span>Reseñas de producto</span></li>
+      </ul>
     </div>
   </div>
 
-  <main class="wrap">
-
-    <!-- SOBRE MI -->
-    <section class="section">
-      <div class="section__head"><h2>Sobre mí</h2></div>
-      <div class="section__body">
-        <div class="about-grid">
-
-          <article class="about">
-            <p>
-              Mi nombre es <strong>Martín Urquiza</strong>. Apasionado de la comida gourmet, los cocktails
-              y las experiencias gastronómicas. Mi cuenta de Instagram atraviesa un crecimiento explosivo
-              y mi perfil encaja a la perfección con marcas que buscan conectar con una audiencia activa y genuina.
-            </p>
-            <p>
-              Creo contenido que genera alcance orgánico, retención real e interacción auténtica. Las vistas
-              llegan por el contenido viral y se retienen por la calidad de cada publicación.
-            </p>
-            <p>
-              Me especializo en mostrar productos transformando lo cotidiano en contenido adictivo,
-              compartible y con identidad propia.
-            </p>
-
-            <div class="handle-tag">
-              📍 @MARTINURQUIZAOK · Buenos Aires
-            </div>
-
-            <div class="formats">
-              <h3>Formatos de colaboración</h3>
-              <ul>
-                <li>Reels con producto integrado</li>
-                <li>Historias con link (swipe-up)</li>
-                <li>Recetas patrocinadas</li>
-                <li>Unboxing y reviews</li>
-                <li>Contenido UGC para uso de marca</li>
-              </ul>
-            </div>
-          </article>
-
-          <aside class="metrics" aria-label="Métricas">
-            <div class="metrics__header">
-              <div class="metrics__kicker">@martinurquizaok</div>
-              <div class="metrics__big">Media Kit<br>2026</div>
-            </div>
-
-            <p class="metrics__section-title">Métricas últimos 30 días</p>
-
-            <div class="metrics__box">
-              <dl class="stat-grid">
-                <div class="stat-row">
-                  <dt>Seguidores</dt>
-                  <dd><strong>97.000+</strong></dd>
-                </div>
-                <div class="stat-row">
-                  <dt>Crecimiento</dt>
-                  <dd>+46% (últimos 30 días)</dd>
-                </div>
-                <div class="stat-row">
-                  <dt>Retención</dt>
-                  <dd>Abandono &lt; 1,5%</dd>
-                </div>
-                <div class="stat-row">
-                  <dt>Audiencia principal</dt>
-                  <dd>Argentina · 25–44 años</dd>
-                </div>
-                <div class="stat-row">
-                  <dt>Nicho</dt>
-                  <dd>Gastronomía · Tragos · Lifestyle</dd>
-                </div>
-              </dl>
-            </div>
-          </aside>
-
-        </div>
-      </div>
-    </section>
-
-    <!-- CTA -->
-    <div class="cta">
-      <p>
-        Quedo a disposición para que desarrollemos juntos una propuesta alineada a los objetivos
-        de su marca y su audiencia. Trabajemos contenido que conecte de verdad.
-      </p>
-      <a class="cta__btn" href="mailto:martinurquiza07@gmail.com">
-        ✉ Contactar ahora
-      </a>
+  <div class="sello">
+    <div class="sello-cifra">73,7%</div>
+    <div class="sello-texto">
+      <strong>Del alcance total llega a personas que no me siguen</strong>
+      De 2,94 millones de reproducciones en 90 días, casi tres cuartas partes salieron fuera de mi comunidad. El contenido no se agota en los seguidores: entra en recomendados y capta público nuevo.
     </div>
+  </div>
+</section>
 
-  </main>
 
-  <footer class="footer">
-    <div class="footer__inner">
-      <span>© 2026 — Martín Urquiza</span>
-      <span>@martinurquizaok</span>
+<!-- ============ 03 AUDIENCIA ============ -->
+<section class="page">
+  <div class="corrido">
+    <span>@martinurquizaok · Media kit</span>
+    <span class="folio">03 — Audiencia</span>
+  </div>
+
+  <div class="eyebrow">Composición de la comunidad · 09 ago 2026</div>
+  <h2 class="seccion">A quién le llega<br>tu marca.</h2>
+
+  <div class="determinacion">
+    <div class="det-param">Seguidores totales
+      <span class="det-nota">Crecimiento de +18,6 % en los últimos 90 días (+19.670)</span>
     </div>
-  </footer>
+    <div class="det-valor">125.587</div>
+  </div>
+  <div class="determinacion">
+    <div class="det-param">Mujeres
+      <span class="det-nota">Hombres: 33,6 %</span>
+    </div>
+    <div class="det-valor">66,4 %</div>
+  </div>
+  <div class="determinacion">
+    <div class="det-param">Audiencia mayor de 18 años
+      <span class="det-nota">Franja 13–17: 0,1 %</span>
+    </div>
+    <div class="det-valor destacado">99,9 %</div>
+  </div>
+  <div class="determinacion">
+    <div class="det-param">Audiencia entre 35 y 54 años
+      <span class="det-nota">El segmento de mayor poder adquisitivo en bebidas</span>
+    </div>
+    <div class="det-valor destacado">60,1 %</div>
+  </div>
+
+  <div style="margin-top:26px">
+    <div class="sub">Distribución por edad</div>
+    <div class="barra-fila"><div class="barra-rot">13–17</div><div class="barra-riel"><div class="barra-relleno" style="width:0.3%"></div></div><div class="barra-val">0,1 %</div></div>
+    <div class="barra-fila"><div class="barra-rot">18–24</div><div class="barra-riel"><div class="barra-relleno" style="width:5.2%"></div></div><div class="barra-val">1,6 %</div></div>
+    <div class="barra-fila"><div class="barra-rot">25–34</div><div class="barra-riel"><div class="barra-relleno" style="width:42.9%"></div></div><div class="barra-val">13,3 %</div></div>
+    <div class="barra-fila pico"><div class="barra-rot">35–44</div><div class="barra-riel"><div class="barra-relleno" style="width:93.9%"></div></div><div class="barra-val">29,1 %</div></div>
+    <div class="barra-fila pico"><div class="barra-rot">45–54</div><div class="barra-riel"><div class="barra-relleno" style="width:100%"></div></div><div class="barra-val">31,0 %</div></div>
+    <div class="barra-fila"><div class="barra-rot">55–64</div><div class="barra-riel"><div class="barra-relleno" style="width:55.8%"></div></div><div class="barra-val">17,3 %</div></div>
+    <div class="barra-fila"><div class="barra-rot">65 +</div><div class="barra-riel"><div class="barra-relleno" style="width:24.5%"></div></div><div class="barra-val">7,6 %</div></div>
+  </div>
+
+  <div class="dos-col" style="margin-top:28px">
+    <div>
+      <div class="sub">Principales países</div>
+      <ul class="lista-simple">
+        <li><span>Argentina</span><span>88,6 %</span></li>
+        <li><span>Uruguay</span><span>3,3 %</span></li>
+        <li><span>Chile</span><span>2,9 %</span></li>
+        <li><span>Paraguay</span><span>1,0 %</span></li>
+        <li><span>España</span><span>0,8 %</span></li>
+      </ul>
+    </div>
+    <div>
+      <div class="sub">Momentos de mayor actividad</div>
+      <ul class="lista-simple">
+        <li><span>Domingos</span><span>18 – 23 h</span></li>
+        <li><span>Miércoles</span><span>21 – 23 h</span></li>
+        <li><span>Idioma español</span><span>99,1 %</span></li>
+      </ul>
+      <p style="font-size:9pt;color:var(--gris);margin-top:12px;max-width:none">Una campaña se puede programar sobre estas ventanas para maximizar el alcance de la publicación.</p>
+    </div>
+  </div>
+</section>
+
+
+<!-- ============ 04 PERFORMANCE ============ -->
+<section class="page">
+  <div class="corrido">
+    <span>@martinurquizaok · Media kit</span>
+    <span class="folio">04 — Performance</span>
+  </div>
+
+  <div class="eyebrow">Período 12 may – 09 ago 2026 · 90 días</div>
+  <h2 class="seccion">Qué produjo la cuenta<br>en el último trimestre.</h2>
+
+  <div class="determinacion">
+    <div class="det-param">Reproducciones totales</div>
+    <div class="det-valor">2.942.634</div>
+  </div>
+  <div class="determinacion">
+    <div class="det-param">Personas únicas alcanzadas</div>
+    <div class="det-valor">1.120.245</div>
+  </div>
+  <div class="determinacion">
+    <div class="det-param">Interacciones totales
+      <span class="det-nota">Me gusta, comentarios, compartidos, guardados y respuestas</span>
+    </div>
+    <div class="det-valor">305.298</div>
+  </div>
+  <div class="determinacion">
+    <div class="det-param">Contenido compartido por la audiencia
+      <span class="det-nota">Indicador de circulación fuera del feed, en mensajes privados y grupos</span>
+    </div>
+    <div class="det-valor destacado">87.000</div>
+  </div>
+  <div class="determinacion">
+    <div class="det-param">Contenido guardado</div>
+    <div class="det-valor">59.000</div>
+  </div>
+  <div class="determinacion">
+    <div class="det-param">Visitas al perfil</div>
+    <div class="det-valor">23.619</div>
+  </div>
+
+  <div class="eyebrow" style="margin-top:32px">Casos recientes</div>
+  <h2 class="seccion" style="font-size:19pt;margin-bottom:14px">Contenido con marca<br>y con producto en cámara.</h2>
+
+  <div class="caso">
+    <div>
+      <div class="caso-titulo">Gin Tea con Sprite</div>
+      <div class="caso-desc">Preparación simple con producto de gran consumo. El formato de receta replicable disparó el compartido: más de 5.500 envíos directos entre usuarios.</div>
+    </div>
+    <div class="caso-datos">
+      <div class="caso-dato"><span class="n">155 K</span><span class="l">Reprod.</span></div>
+      <div class="caso-dato"><span class="n">5,5 K</span><span class="l">Compart.</span></div>
+      <div class="caso-dato"><span class="n">838</span><span class="l">Seguidores</span></div>
+    </div>
+  </div>
+
+  <div class="caso">
+    <div>
+      <div class="caso-titulo">Licor de café casero</div>
+      <div class="caso-desc">Contenido técnico de elaboración. Alta retención y guardado: el público lo archiva para reproducirlo, lo que extiende la vida útil de la pieza.</div>
+    </div>
+    <div class="caso-datos">
+      <div class="caso-dato"><span class="n">77,2 K</span><span class="l">Reprod.</span></div>
+      <div class="caso-dato"><span class="n">1,3 K</span><span class="l">Compart.</span></div>
+      <div class="caso-dato"><span class="n">1.100</span><span class="l">Seguidores</span></div>
+    </div>
+  </div>
+
+  <div class="caso">
+    <div>
+      <div class="caso-titulo">Conde Drácula</div>
+      <div class="caso-desc">Trago de concepto, con puesta en escena y personaje. Formato de entretenimiento puro, alto volumen de compartidos y captación de público nuevo.</div>
+    </div>
+    <div class="caso-datos">
+      <div class="caso-dato"><span class="n">56,4 K</span><span class="l">Reprod.</span></div>
+      <div class="caso-dato"><span class="n">1,5 K</span><span class="l">Compart.</span></div>
+      <div class="caso-dato"><span class="n">566</span><span class="l">Seguidores</span></div>
+    </div>
+  </div>
+
+  <p class="nota-legal">Todas las cifras corresponden a alcance orgánico, sin pauta paga, y son verificables en Instagram Insights a pedido.</p>
+</section>
+
+
+<!-- ============ 05 SERVICIOS ============ -->
+<section class="page">
+  <div class="corrido">
+    <span>@martinurquizaok · Media kit</span>
+    <span class="folio">05 — Servicios</span>
+  </div>
+
+  <div class="eyebrow">Qué puedo producir para tu marca</div>
+  <h2 class="seccion">Servicios.</h2>
+
+  <div class="servicio">
+    <div class="servicio-cab">
+      <div class="servicio-nombre">Contenido UGC</div>
+      <div class="servicio-tag">Recomendado</div>
+    </div>
+    <p>Video producido íntegramente por mí para que la marca lo publique en sus propios canales o lo use como creatividad en pauta. Incluye concepto, guion, producción y presencia en cámara. Es el formato con mejor relación costo-resultado cuando el objetivo es alimentar Meta Ads con material que no parece publicidad.</p>
+  </div>
+
+  <div class="servicio">
+    <div class="servicio-cab">
+      <div class="servicio-nombre">Reel patrocinado</div>
+      <div class="servicio-tag">Feed propio</div>
+    </div>
+    <p>Pieza publicada en @martinurquizaok, con producto integrado al contenido. Incluye concepto, producción, edición, copy y reporte de métricas a los 7 y 30 días.</p>
+  </div>
+
+  <div class="servicio">
+    <div class="servicio-cab">
+      <div class="servicio-nombre">Reel + historias</div>
+      <div class="servicio-tag">Paquete</div>
+    </div>
+    <p>Reel en feed más tres historias con enlace o mención, publicadas en las ventanas horarias de mayor actividad de la comunidad.</p>
+  </div>
+
+  <div class="servicio">
+    <div class="servicio-cab">
+      <div class="servicio-nombre">Colaboración en publicación</div>
+      <div class="servicio-tag">Cuenta compartida</div>
+    </div>
+    <p>Publicación colaborativa que aparece simultáneamente en ambos perfiles y suma el alcance de las dos comunidades.</p>
+  </div>
+
+  <div class="servicio">
+    <div class="servicio-cab">
+      <div class="servicio-nombre">Contenido técnico de producto</div>
+      <div class="servicio-tag">Diferencial</div>
+    </div>
+    <p>Explicativos sobre el producto desde el conocimiento químico: conservación, temperatura de servicio, maridaje, comportamiento del destilado, errores frecuentes de preparación. Formato indicado para lanzamientos que necesitan explicar algo, no solo mostrarlo.</p>
+  </div>
+
+  <div style="margin-top:26px">
+    <div class="sub">Condiciones de trabajo</div>
+    <ul class="lista-simple">
+      <li><span>Aprobación de guion previa a la grabación</span><span>Incluida</span></li>
+      <li><span>Rondas de revisión sobre el material</span><span>2</span></li>
+      <li><span>Plazo de entrega desde guion aprobado</span><span>7 a 10 días</span></li>
+      <li><span>Uso orgánico en canales de la marca</span><span>30 días</span></li>
+      <li><span>Uso en pauta paga</span><span>Se cotiza aparte</span></li>
+      <li><span>Exclusividad frente a competidores</span><span>Se cotiza aparte</span></li>
+    </ul>
+    <p class="nota-legal">Todo el contenido de bebidas alcohólicas se produce en cumplimiento de la Ley 24.788: sin participación de menores, sin asociar el consumo al rendimiento físico o al éxito personal, y con la leyenda de consumo responsable cuando corresponde.</p>
+  </div>
+</section>
+
+
+<!-- ============ 06 CONTACTO ============ -->
+<section class="page">
+  <div class="corrido">
+    <span>@martinurquizaok · Media kit</span>
+    <span class="folio">06 — Contacto</span>
+  </div>
+
+  <div class="eyebrow">Siguiente paso</div>
+  <h2 class="seccion">Contame qué necesita<br>la campaña y te envío<br>la propuesta.</h2>
+
+  <p>Trabajo con propuestas cerradas por campaña: objetivo, formato, cantidad de piezas, derechos de uso y plazo. El tarifario completo se envía a pedido, en pesos o en dólares según corresponda al cliente.</p>
+
+  <div class="contacto-bloque">
+    <div>
+      <div class="eyebrow eyebrow-gris">Correo</div>
+      <div class="contacto-dato"><span class="completar">completar@correo.com</span></div>
+
+      <div class="eyebrow eyebrow-gris" style="margin-top:20px">WhatsApp</div>
+      <div class="contacto-dato"><span class="completar">+54 9 11 ....-....</span></div>
+    </div>
+    <div>
+      <div class="eyebrow eyebrow-gris">Instagram</div>
+      <div class="contacto-dato">@martinurquizaok</div>
+
+      <div class="eyebrow eyebrow-gris" style="margin-top:20px">Sitio</div>
+      <div class="contacto-dato"><span class="completar">martinurquiza.com</span></div>
+    </div>
+  </div>
+
+  <p class="nota-legal">Martín Urquiza · Buenos Aires, Argentina · Datos de audiencia y performance extraídos de Instagram Insights el 09 de agosto de 2026, correspondientes al período de 90 días iniciado el 12 de mayo de 2026. Capturas disponibles a pedido.</p>
+</section>
 
 </body>
 </html>
